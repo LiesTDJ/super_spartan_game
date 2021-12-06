@@ -1,3 +1,8 @@
 body {
     background-color: slategray;
 }
+.container {
+    overflow: hidden;
+    height: 145px;
+    width: 80px;
+}
