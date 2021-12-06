@@ -2,7 +2,13 @@ body {
     background-color: slategray;
 }
 .container {
-    overflow: hidden;
     height: 145px;
+    overflow: hidden;
+    position: absolute;
     width: 80px;
+}
+.container .content {
+    left: 0px;
+    position: absolute;
+    top: 0px;
 }
