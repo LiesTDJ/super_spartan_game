@@ -335,10 +335,23 @@ const spriteMovePosition = {
             spritePositionLeft: -6968
         },
     ]
-}
+};
 
+const $container = $('.container');
+const $content = $('.content');
 
+const moveMethod = {
+    static: function(movement) {
+        setInterval(function(){
+            for (let i = 0, length = spriteMovePosition.movement.length;
+                i < length; i++) {
+                    $container.width() = spriteMovePosition.movement[i].maskContainerWidth;
+                }
+        },1000);
+    },
+};
+
+moveMethod.static(staticRightAndLeft);
 
 $(function() {
-
 });
