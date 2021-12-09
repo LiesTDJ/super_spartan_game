@@ -337,21 +337,100 @@ const spriteMovePosition = {
     ]
 };
 
+
 const $container = $('.container');
 const $content = $('.content');
 
 const moveMethod = {
-    static: function(movement) {
-        setInterval(function(){
-            for (let i = 0, length = spriteMovePosition.movement.length;
-                i < length; i++) {
-                    $container.width() = spriteMovePosition.movement[i].maskContainerWidth;
-                }
-        },1000);
+    static: function() {
+        for (let i = 0, length = spriteMovePosition.staticRightAndLeft.length; i < length; i++) {
+            console.log("🚀 ~ file: script.js ~ line 347 ~ i", i)
+            let idInterval = setInterval(function(){
+                let newPositionLeft = spriteMovePosition.staticRightAndLeft[i].spritePositionLeft;
+                console.log("🚀 ~ file: script.js ~ line 350 ~ idInterval ~ newPositionLeft", newPositionLeft)
+                $content.css('left', 'newPositionLeft');
+                $container.width(spriteMovePosition.staticRightAndLeft[i].maskContainerWidth);
+            },1000);
+            return idInterval;
+        }
     },
 };
 
-moveMethod.static(staticRightAndLeft);
+moveMethod.static();
 
 $(function() {
+        
+    var moveIntervalId = 0;
+    var moveAnimationStarted = false;
+    var moveDownIntervalId = 0;
+    var moveDownAnimationStarted = false;
+    // var container = document.getElementById('container');
+    // var contenu = document.getElementById('contenu');
+
+    
+
+
+    window.onkeyup = function(event){
+        // Static movement
+        window.clearInterval(moveIntervalId);
+        moveAnimationStarted = false;
+        moveMethod.static();
+    }
+
+
+    window.onkeydown = function(event){
+
+        var code = event.keyCode;
+
+        switch(code){
+            case 37:
+            // move to the left
+
+            if (moveAnimationStarted === false) {
+                moveIntervalId = movementSprite('leftMove', 4, -4);
+                moveAnimationStarted = true;
+            }
+            
+            break;
+            
+            case 39:
+                // Move to the right
+
+                if (moveAnimationStarted === false) {
+                    moveIntervalId = movementSprite('rightMove', 4, 4);
+                moveAnimationStarted = true;
+                }
+                
+                break;
+                
+                case 40:
+                    // Move down
+                
+                if (moveDownAnimationStarted === false) {
+                moveDownIntervalId = movementSprite('downMove', 0, 0);
+                console.log(moveDownIntervalId);
+                moveDownAnimationStarted = true;
+            }
+            
+            break;
+
+            case 38:                  
+            const moveUp = function() {
+                var elmtMove = document.getElementById('container');
+                elmtMove = elmtMove.style.top;
+                elmtMove = parseInt(elmtMove);
+                if (isNaN(elmtMove)) {
+                        elmtMove = 78 + 'px';
+                    } else {
+                        elmtMove = elmtMove - 2 + 'px';
+                    }
+                    elmtMove.style.top = elmtMove;
+            }();
+        
+            break;
+            
+        };
+    
+    };
+
 });
