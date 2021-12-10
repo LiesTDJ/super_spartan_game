@@ -1,8 +1,8 @@
 'use strict'
 
 const spriteMovePosition = {
-    staticRightAndLeft: [{
-            // first static right position
+    staticRight: [{
+            // static right position
             maskContainerWidth: 80,
             spritePositionLeft: -4529
         },
@@ -21,6 +21,28 @@ const spriteMovePosition = {
         {
             maskContainerWidth: 80,
             spritePositionLeft: -5163
+        },
+    ],
+    staticLeft: [{
+            // static left position
+            maskContainerWidth: 80,
+            spritePositionLeft: -9012
+        },
+        {
+            maskContainerWidth: 80,
+            spritePositionLeft: -8856
+        },
+        {
+            maskContainerWidth: 80,
+            spritePositionLeft: -8700
+        },
+        {
+            maskContainerWidth: 80,
+            spritePositionLeft: -8545
+        },
+        {
+            maskContainerWidth: 80,
+            spritePositionLeft: -8389
         },
     ],
     
@@ -266,21 +288,39 @@ const spriteMovePosition = {
 
 const $container = $('.container');
 const $content = $('.content');
+var lastPosition = 'rightSide'; // keep in the var the last position
 
 const moveMethod = {
     static: function() {
-        let i = 0;
-        let idInterval = setInterval(function(){
-            let length = spriteMovePosition.staticRightAndLeft.length; 
-            let newPositionLeft = spriteMovePosition.staticRightAndLeft[i].spritePositionLeft;
-            $content.css('left', newPositionLeft);
-            $container.width(spriteMovePosition.staticRightAndLeft[i].maskContainerWidth);
-            i++;
-            if (i == spriteMovePosition.staticRightAndLeft.length) {
-                i = 0;
-            }
-        },150);
-        return idInterval;
+        if (lastPosition == 'rightSide') {
+            let i = 0;
+            let idInterval = setInterval(function(){
+                let length = spriteMovePosition.staticRight.length; 
+                let newPositionLeft = spriteMovePosition.staticRight[i].spritePositionLeft;
+                $content.css('left', newPositionLeft);
+                $container.width(spriteMovePosition.staticRight[i].maskContainerWidth);
+                i++;
+                if (i == spriteMovePosition.staticRight.length) {
+                    i = 0;
+                }
+            },150);
+            console.log('static move');
+            return idInterval;
+        } else if (lastPosition == 'leftSide') {
+            let i = 0;
+            let idInterval = setInterval(function(){
+                let length = spriteMovePosition.staticLeft.length; 
+                let newPositionLeft = spriteMovePosition.staticLeft[i].spritePositionLeft;
+                $content.css('left', newPositionLeft);
+                $container.width(spriteMovePosition.staticLeft[i].maskContainerWidth);
+                i++;
+                if (i == spriteMovePosition.staticLeft.length) {
+                    i = 0;
+                }
+            },150);
+            console.log('static move');
+            return idInterval;
+        }
     },
 
     actionAttackRight: function() {
@@ -294,7 +334,8 @@ const moveMethod = {
             if (i == spriteMovePosition.attackRight.length) {
                 i = 0;
             }
-        },150);
+        },50);
+        console.log(actionAttackRight);
         return idInterval;
     },
 
@@ -309,7 +350,8 @@ const moveMethod = {
             if (i == spriteMovePosition.attackLeft.length) {
                 i = 0;
             }
-        },150);
+        },75);
+        console.log(actionAttackLeft);
         return idInterval;
     },
 
@@ -331,7 +373,8 @@ const moveMethod = {
             if (i == spriteMovePosition.runRight.length) {
                 i = 0;
             }
-        },150);
+        },100);
+        console.log('moveRight');
         return idInterval;
     },
 
@@ -347,7 +390,8 @@ const moveMethod = {
             if (i == spriteMovePosition.runLeft.length) {
                 i = 0;
             }
-        },150);
+        },100);
+        console.log('moveLeft');
         return idInterval;
     }
 };
@@ -357,13 +401,13 @@ $(function() {
     
     var moveIntervalId = 0;
     var moveAnimationStarted = false;
-    var moveDownIntervalId = 0;
     var moveAttackAnimationStarted = false;
     var staticIntervalId = 0;
 
+
     window.onkeyup = function(event){
         // Static movement
-        window.clearInterval(moveIntervalId);
+        window.clearInterval(moveIntervalId);        
         moveAnimationStarted = false;
         staticIntervalId = moveMethod.static();
     }
@@ -381,9 +425,10 @@ $(function() {
                 moveIntervalId = moveMethod.moveRight(10);
                 moveAnimationStarted = true;
             }
+            lastPosition = 'rightSide';
             
             break;
-
+            
             case 37:
             // move to the left by left arrow key
 
@@ -392,16 +437,25 @@ $(function() {
                 moveIntervalId = moveMethod.moveLeft(-10);
                 moveAnimationStarted = true;
             }
+            lastPosition = 'leftSide';
             
-            break;            
+            break;
                 
             case 32:
-            // right attack move by space key
+            // attack move by space key
             
-            if (moveAttackAnimationStarted === false) {
-                window.clearInterval(staticIntervalId);
-                moveMethod.actionAttackRight();
-                moveAttackAnimationStarted = true;
+            if (lastPosition == 'rightSide') {
+                if (moveAttackAnimationStarted === false) {
+                    window.clearInterval(staticIntervalId);
+                    moveIntervalId = moveMethod.actionAttackRight();
+                    moveAttackAnimationStarted = true;
+                }
+            } else if (lastPosition == 'leftSide') {
+                if (moveAttackAnimationStarted === false) {
+                    window.clearInterval(staticIntervalId);
+                    moveIntervalId = moveMethod.actionAttackLeft();
+                    moveAttackAnimationStarted = true;
+                }
             }
             
             break;
