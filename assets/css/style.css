@@ -1,7 +1,10 @@
 body {
-    background-color: slategray;
+    background-image: url(../img/NATURE_PARALLAX_BG/bgPerso3.png);
+    background-size: cover;
 }
 .container {
+    top: 450px;
+    left: 250px;
     height: 145px;
     overflow: hidden;
     position: absolute;

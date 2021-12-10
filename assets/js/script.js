@@ -22,83 +22,15 @@ const spriteMovePosition = {
             maskContainerWidth: 80,
             spritePositionLeft: -5163
         },
-
-        // second static right position
-        {
-            maskContainerWidth: 80,
-            spritePositionLeft: -4529
-        },
-        {
-            maskContainerWidth: 80,
-            spritePositionLeft: -4688
-        },
-        {
-            maskContainerWidth: 80,
-            spritePositionLeft: -4845
-        },
-        {
-            maskContainerWidth: 80,
-            spritePositionLeft: -5005
-        },
-        {
-            maskContainerWidth: 80,
-            spritePositionLeft: -5163
-        },
-        
-        // first static left position
-        {
-            maskContainerWidth: 80,
-            spritePositionLeft: -9012
-        },
-        {
-            maskContainerWidth: 80,
-            spritePositionLeft: -8855
-        },
-        {
-            maskContainerWidth: 80,
-            spritePositionLeft: -8700
-        },
-        {
-            maskContainerWidth: 80,
-            spritePositionLeft: -8544
-        },
-        {
-            maskContainerWidth: 80,
-                spritePositionLeft: -8389
-        },
-
-        // second static left position
-        {
-            maskContainerWidth: 80,
-            spritePositionLeft: -9012
-        },
-        {
-            maskContainerWidth: 80,
-            spritePositionLeft: -8855
-        },
-        {
-            maskContainerWidth: 80,
-            spritePositionLeft: -8700
-        },
-        {
-            maskContainerWidth: 80,
-            spritePositionLeft: -8544
-        },
-        {
-            maskContainerWidth: 80,
-            spritePositionLeft: -8389
-        },
     ],
     
     attackRight: [{
-            // maskContainerHeight: 145,
             maskContainerWidth: 80,
             spritePositionLeft: 0
-            // spritePositionTop: 0
         },
         {
-        maskContainerWidth: 104,
-        spritePositionLeft: -223
+            maskContainerWidth: 104,
+            spritePositionLeft: -223
         },
         {
             maskContainerWidth: 119,
@@ -131,10 +63,8 @@ const spriteMovePosition = {
     ],
 
     deathRight: [{
-            // maskContainerHeight: 145,
             maskContainerWidth: 83,
             spritePositionLeft: -2197
-            // spritePositionTop: 0
         },
         {
             maskContainerWidth: 106,
@@ -214,10 +144,8 @@ const spriteMovePosition = {
     ],
     
     attackLeft: [{
-            // maskContainerHeight: 145,
             maskContainerWidth: 80,
             spritePositionLeft: -13460
-            // spritePositionTop: 0
         },
         {
             maskContainerWidth: 106,
@@ -254,10 +182,8 @@ const spriteMovePosition = {
     ],
 
     deathLeft: [{
-            // maskContainerHeight: 145,
             maskContainerWidth: 83,
             spritePositionLeft: -11299
-            // spritePositionTop: 0
         },
         {
             maskContainerWidth: 106,
@@ -343,90 +269,141 @@ const $content = $('.content');
 
 const moveMethod = {
     static: function() {
-        for (let i = 0, length = spriteMovePosition.staticRightAndLeft.length; i < length; i++) {
-            console.log("🚀 ~ file: script.js ~ line 347 ~ i", i)
-            let idInterval = setInterval(function(){
-                let newPositionLeft = spriteMovePosition.staticRightAndLeft[i].spritePositionLeft;
-                console.log("🚀 ~ file: script.js ~ line 350 ~ idInterval ~ newPositionLeft", newPositionLeft)
-                $content.css('left', 'newPositionLeft');
-                $container.width(spriteMovePosition.staticRightAndLeft[i].maskContainerWidth);
-            },1000);
-            return idInterval;
-        }
+        let i = 0;
+        let idInterval = setInterval(function(){
+            let length = spriteMovePosition.staticRightAndLeft.length; 
+            let newPositionLeft = spriteMovePosition.staticRightAndLeft[i].spritePositionLeft;
+            $content.css('left', newPositionLeft);
+            $container.width(spriteMovePosition.staticRightAndLeft[i].maskContainerWidth);
+            i++;
+            if (i == spriteMovePosition.staticRightAndLeft.length) {
+                i = 0;
+            }
+        },150);
+        return idInterval;
     },
+
+    actionAttackRight: function() {
+        let i = 0;
+        let idInterval = setInterval(function(){
+            let length = spriteMovePosition.attackRight.length; 
+            let newPositionLeft = spriteMovePosition.attackRight[i].spritePositionLeft;
+            $content.css('left', newPositionLeft);
+            $container.width(spriteMovePosition.attackRight[i].maskContainerWidth);
+            i++;
+            if (i == spriteMovePosition.attackRight.length) {
+                i = 0;
+            }
+        },150);
+        return idInterval;
+    },
+
+    actionAttackLeft: function() {
+        let i = 0;
+        let idInterval = setInterval(function(){
+            let length = spriteMovePosition.attackLeft.length; 
+            let newPositionLeft = spriteMovePosition.attackLeft[i].spritePositionLeft;
+            $content.css('left', newPositionLeft);
+            $container.width(spriteMovePosition.attackLeft[i].maskContainerWidth);
+            i++;
+            if (i == spriteMovePosition.attackLeft.length) {
+                i = 0;
+            }
+        },150);
+        return idInterval;
+    },
+
+    spriteMovementAction: function(addPosition) {
+        let elementMove = $container.css('left');
+        elementMove = parseInt(elementMove) + addPosition;
+        $container.css('left', elementMove);
+    },
+
+    moveRight: function(addPosition) {
+        let i = 0;
+        let idInterval = setInterval(function(){
+            moveMethod.spriteMovementAction(addPosition)
+            let length = spriteMovePosition.runRight.length; 
+            let newPositionLeft = spriteMovePosition.runRight[i].spritePositionLeft;
+            $content.css('left', newPositionLeft);
+            $container.width(spriteMovePosition.runRight[i].maskContainerWidth);
+            i++;
+            if (i == spriteMovePosition.runRight.length) {
+                i = 0;
+            }
+        },150);
+        return idInterval;
+    },
+
+    moveLeft: function(addPosition) {
+        let i = 0;
+        let idInterval = setInterval(function(){
+            moveMethod.spriteMovementAction(addPosition)
+            let length = spriteMovePosition.runLeft.length; 
+            let newPositionLeft = spriteMovePosition.runLeft[i].spritePositionLeft;
+            $content.css('left', newPositionLeft);
+            $container.width(spriteMovePosition.runLeft[i].maskContainerWidth);
+            i++;
+            if (i == spriteMovePosition.runLeft.length) {
+                i = 0;
+            }
+        },150);
+        return idInterval;
+    }
 };
 
-moveMethod.static();
 
 $(function() {
-        
+    
     var moveIntervalId = 0;
     var moveAnimationStarted = false;
     var moveDownIntervalId = 0;
-    var moveDownAnimationStarted = false;
-    // var container = document.getElementById('container');
-    // var contenu = document.getElementById('contenu');
-
-    
-
+    var moveAttackAnimationStarted = false;
+    var staticIntervalId = 0;
 
     window.onkeyup = function(event){
         // Static movement
         window.clearInterval(moveIntervalId);
         moveAnimationStarted = false;
-        moveMethod.static();
+        staticIntervalId = moveMethod.static();
     }
-
 
     window.onkeydown = function(event){
 
         var code = event.keyCode;
 
         switch(code){
-            case 37:
-            // move to the left
+            case 39:
+            // Move to the right by right arrow key
 
             if (moveAnimationStarted === false) {
-                moveIntervalId = movementSprite('leftMove', 4, -4);
+                window.clearInterval(staticIntervalId);
+                moveIntervalId = moveMethod.moveRight(10);
                 moveAnimationStarted = true;
             }
             
             break;
-            
-            case 39:
-                // Move to the right
 
-                if (moveAnimationStarted === false) {
-                    moveIntervalId = movementSprite('rightMove', 4, 4);
+            case 37:
+            // move to the left by left arrow key
+
+            if (moveAnimationStarted === false) {
+                window.clearInterval(staticIntervalId);
+                moveIntervalId = moveMethod.moveLeft(-10);
                 moveAnimationStarted = true;
-                }
-                
-                break;
-                
-                case 40:
-                    // Move down
-                
-                if (moveDownAnimationStarted === false) {
-                moveDownIntervalId = movementSprite('downMove', 0, 0);
-                console.log(moveDownIntervalId);
-                moveDownAnimationStarted = true;
             }
             
-            break;
-
-            case 38:                  
-            const moveUp = function() {
-                var elmtMove = document.getElementById('container');
-                elmtMove = elmtMove.style.top;
-                elmtMove = parseInt(elmtMove);
-                if (isNaN(elmtMove)) {
-                        elmtMove = 78 + 'px';
-                    } else {
-                        elmtMove = elmtMove - 2 + 'px';
-                    }
-                    elmtMove.style.top = elmtMove;
-            }();
-        
+            break;            
+                
+            case 32:
+            // right attack move by space key
+            
+            if (moveAttackAnimationStarted === false) {
+                window.clearInterval(staticIntervalId);
+                moveMethod.actionAttackRight();
+                moveAttackAnimationStarted = true;
+            }
+            
             break;
             
         };
