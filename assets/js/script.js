@@ -290,6 +290,11 @@ const $container = $('.container');
 const $content = $('.content');
 var lastPosition = 'rightSide'; // keep in the var the last position
 
+var moveIntervalId = 0;
+var moveAnimationStarted = false;
+var moveAttackAnimationStarted = false;
+var staticIntervalId = 0;
+
 const moveMethod = {
     static: function() {
         if (lastPosition == 'rightSide') {
@@ -303,7 +308,7 @@ const moveMethod = {
                 if (i == spriteMovePosition.staticRight.length) {
                     i = 0;
                 }
-            },150);
+            },125);
             console.log('static move');
             return idInterval;
         } else if (lastPosition == 'leftSide') {
@@ -317,7 +322,7 @@ const moveMethod = {
                 if (i == spriteMovePosition.staticLeft.length) {
                     i = 0;
                 }
-            },150);
+            },125);
             console.log('static move');
             return idInterval;
         }
@@ -333,9 +338,10 @@ const moveMethod = {
             i++;
             if (i == spriteMovePosition.attackRight.length) {
                 i = 0;
+                clearInterval(idInterval);
+                moveAttackAnimationStarted = false;
             }
-        },50);
-        console.log(actionAttackRight);
+        },40);
         return idInterval;
     },
 
@@ -350,8 +356,8 @@ const moveMethod = {
             if (i == spriteMovePosition.attackLeft.length) {
                 i = 0;
             }
-        },75);
-        console.log(actionAttackLeft);
+        },40);
+        console.log('actionAttackLeft');
         return idInterval;
     },
 
@@ -373,7 +379,7 @@ const moveMethod = {
             if (i == spriteMovePosition.runRight.length) {
                 i = 0;
             }
-        },100);
+        },50);
         console.log('moveRight');
         return idInterval;
     },
@@ -390,7 +396,7 @@ const moveMethod = {
             if (i == spriteMovePosition.runLeft.length) {
                 i = 0;
             }
-        },100);
+        },50);
         console.log('moveLeft');
         return idInterval;
     }
@@ -399,16 +405,13 @@ const moveMethod = {
 
 $(function() {
     
-    var moveIntervalId = 0;
-    var moveAnimationStarted = false;
-    var moveAttackAnimationStarted = false;
-    var staticIntervalId = 0;
 
 
     window.onkeyup = function(event){
         // Static movement
         window.clearInterval(moveIntervalId);        
         moveAnimationStarted = false;
+        moveAttackAnimationStarted = false;
         staticIntervalId = moveMethod.static();
     }
 
@@ -425,8 +428,7 @@ $(function() {
                 moveIntervalId = moveMethod.moveRight(10);
                 moveAnimationStarted = true;
             }
-            lastPosition = 'rightSide';
-            
+            lastPosition = 'rightSide';            
             break;
             
             case 37:
@@ -437,8 +439,7 @@ $(function() {
                 moveIntervalId = moveMethod.moveLeft(-10);
                 moveAnimationStarted = true;
             }
-            lastPosition = 'leftSide';
-            
+            lastPosition = 'leftSide';            
             break;
                 
             case 32:
@@ -457,11 +458,7 @@ $(function() {
                     moveAttackAnimationStarted = true;
                 }
             }
-            
             break;
-            
         };
-    
     };
-
 });
