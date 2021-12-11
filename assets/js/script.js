@@ -370,10 +370,10 @@ const moveMethod = {
 
     spriteMovementAction: function(addPosition, limitPosition) {
         //The character should not got out of the game field
-        if (elementMove <= windowSize / 4) {
+        if (elementMove <= windowSize / 3) { //For the left move
             elementMove = elementMove + 1;
             $container.css('left', elementMove);
-        } else if (elementMove >= windowSize * .65) {
+        } else if (elementMove >= windowSize * .65) { //for the right move
             elementMove = elementMove - 1;
             $container.css('left', elementMove);
         } else {
@@ -441,7 +441,7 @@ $(function() {
 
             if (moveAnimationStarted === false) {
                 window.clearInterval(staticIntervalId);
-                moveIntervalId = moveMethod.moveRight(10, 350, 1);
+                moveIntervalId = moveMethod.moveRight(10, 350);
                 moveAnimationStarted = true;
             }
             lastPosition = 'rightSide';            

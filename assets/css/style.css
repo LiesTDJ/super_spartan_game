@@ -4,6 +4,15 @@ body {
 footer {
     display: inline-flex;
     padding-right: 5%;
+    position: static;
+    display: contents;
+}
+aside {
+    border: 5px solid rgb(207, 128, 0);
+    border-radius: 15px;
+}
+aside h2,p {
+    align-items: center;
 }
 #gameField {
     background-image: url(../img/NATURE_PARALLAX_BG/bgPerso3.png);
@@ -13,8 +22,8 @@ footer {
     display: block;
     height: 500px;
     margin-bottom: 25px;
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 25%;
+    margin-right: 5%;
     margin-top: 25px;
     width: auto;
 }
