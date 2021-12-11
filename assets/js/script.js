@@ -288,7 +288,13 @@ const spriteMovePosition = {
 
 const $container = $('.container');
 const $content = $('.content');
-var lastPosition = 'rightSide'; // keep in the var the last position
+var lastPosition = 'rightSide'; // keep in a var the last position of the character
+
+const windowSize = window.innerWidth;
+console.log("🚀 ~ file: script.js ~ line 294 ~ windowSize", windowSize);
+
+var InitialCharacterPosition = windowSize / 3;
+var elementMove = InitialCharacterPosition;
 
 var moveIntervalId = 0;
 var moveAnimationStarted = false;
@@ -342,6 +348,7 @@ const moveMethod = {
                 moveAttackAnimationStarted = false;
             }
         },75);
+        console.log('actionAttackRight');
         return idInterval;
     },
 
@@ -362,10 +369,17 @@ const moveMethod = {
     },
 
     spriteMovementAction: function(addPosition, limitPosition) {
-        let elementMove = $container.css('left');
-        elementMove = parseInt(elementMove) + addPosition;
-        $container.css('left', elementMove);
-        
+        //The character should not got out of the game field
+        if (elementMove <= windowSize / 4) {
+            elementMove = elementMove + 1;
+            $container.css('left', elementMove);
+        } else if (elementMove >= windowSize * .65) {
+            elementMove = elementMove - 1;
+            $container.css('left', elementMove);
+        } else {
+            elementMove = parseInt(elementMove) + addPosition;
+            $container.css('left', elementMove);
+        }
     },
 
     moveRight: function(addPosition, limitPosition) {
@@ -406,7 +420,9 @@ const moveMethod = {
 
 $(function() {
     
-    
+    //Setting of the initial position of the character
+    $container.css('left', InitialCharacterPosition);
+
     window.onkeyup = function(event){
         // Static movement
         window.clearInterval(moveIntervalId);        
@@ -425,7 +441,7 @@ $(function() {
 
             if (moveAnimationStarted === false) {
                 window.clearInterval(staticIntervalId);
-                moveIntervalId = moveMethod.moveRight(10, 350);
+                moveIntervalId = moveMethod.moveRight(10, 350, 1);
                 moveAnimationStarted = true;
             }
             lastPosition = 'rightSide';            
