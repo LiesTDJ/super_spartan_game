@@ -3,10 +3,14 @@
 This is my first JavaScript game for a **IFOCOP** project.
 ***
 ## 1.1. Table of Contents
-1. [General Info](#general-info)
-2. [Technologies](#technologies)
-4. [Collaboration](#collaboration)
-5. [FAQs](#faqs)
+- [1. Super Spartan Game](#1-super-spartan-game)
+  - [1.1. Table of Contents](#11-table-of-contents)
+  - [1.2. General Info](#12-general-info)
+    - [1.2.1. Project status](#121-project-status)
+    - [1.2.2. Screenshot](#122-screenshot)
+  - [Technologies](#technologies)
+  - [Collaboration](#collaboration)
+  - [FAQs](#faqs)
 ***
 ## 1.2. General Info
 ***
@@ -43,10 +47,10 @@ I don't mind if anyone want to use my work:
 ***
 ###A list of frequently asked questions###
 ***
-####Will this game work?####
+**Will this game work?**
 ***
 Yes, it will work!
 ***
-####Is it a good game?#### 
+**Is it a good game?**
 ***
 For a first try, I think so.
