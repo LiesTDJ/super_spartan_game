@@ -3,27 +3,27 @@ body {
 }
 footer {
     display: inline-flex;
-    right: 5%;
+    padding-right: 5%;
 }
-main {
-    margin-top: 25px;
-    margin-bottom: 25px;
+#gameField {
     background-image: url(../img/NATURE_PARALLAX_BG/bgPerso3.png);
     background-size: cover;
     border: 15px solid rgb(185, 173, 0);
     border-radius: 25px;
-    height: 500px;
-    width: 900px;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    height: 500px;
+    margin-bottom: 25px;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 25px;
+    width: auto;
 }
 .container {
     height: 145px;
-    left: 350px;
+    left: 250px;
     overflow: hidden;
     position: absolute;
-    top: 450px;
+    top: 400px;
     width: 80px;
 }
 .container .content {

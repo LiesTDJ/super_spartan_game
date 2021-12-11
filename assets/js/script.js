@@ -341,7 +341,7 @@ const moveMethod = {
                 clearInterval(idInterval);
                 moveAttackAnimationStarted = false;
             }
-        },40);
+        },75);
         return idInterval;
     },
 
@@ -356,21 +356,22 @@ const moveMethod = {
             if (i == spriteMovePosition.attackLeft.length) {
                 i = 0;
             }
-        },40);
+        },75);
         console.log('actionAttackLeft');
         return idInterval;
     },
 
-    spriteMovementAction: function(addPosition) {
+    spriteMovementAction: function(addPosition, limitPosition) {
         let elementMove = $container.css('left');
         elementMove = parseInt(elementMove) + addPosition;
         $container.css('left', elementMove);
+        
     },
 
-    moveRight: function(addPosition) {
+    moveRight: function(addPosition, limitPosition) {
         let i = 0;
         let idInterval = setInterval(function(){
-            moveMethod.spriteMovementAction(addPosition)
+            moveMethod.spriteMovementAction(addPosition, limitPosition)
             let length = spriteMovePosition.runRight.length; 
             let newPositionLeft = spriteMovePosition.runRight[i].spritePositionLeft;
             $content.css('left', newPositionLeft);
@@ -384,10 +385,10 @@ const moveMethod = {
         return idInterval;
     },
 
-    moveLeft: function(addPosition) {
+    moveLeft: function(addPosition, limitPosition) {
         let i = 0;
         let idInterval = setInterval(function(){
-            moveMethod.spriteMovementAction(addPosition)
+            moveMethod.spriteMovementAction(addPosition, limitPosition)
             let length = spriteMovePosition.runLeft.length; 
             let newPositionLeft = spriteMovePosition.runLeft[i].spritePositionLeft;
             $content.css('left', newPositionLeft);
@@ -405,8 +406,7 @@ const moveMethod = {
 
 $(function() {
     
-
-
+    
     window.onkeyup = function(event){
         // Static movement
         window.clearInterval(moveIntervalId);        
@@ -414,7 +414,7 @@ $(function() {
         moveAttackAnimationStarted = false;
         staticIntervalId = moveMethod.static();
     }
-
+    
     window.onkeydown = function(event){
 
         var code = event.keyCode;
@@ -425,7 +425,7 @@ $(function() {
 
             if (moveAnimationStarted === false) {
                 window.clearInterval(staticIntervalId);
-                moveIntervalId = moveMethod.moveRight(10);
+                moveIntervalId = moveMethod.moveRight(10, 350);
                 moveAnimationStarted = true;
             }
             lastPosition = 'rightSide';            
@@ -436,7 +436,7 @@ $(function() {
 
             if (moveAnimationStarted === false) {
                 window.clearInterval(staticIntervalId);
-                moveIntervalId = moveMethod.moveLeft(-10);
+                moveIntervalId = moveMethod.moveLeft(-10, 800);
                 moveAnimationStarted = true;
             }
             lastPosition = 'leftSide';            
