@@ -445,8 +445,8 @@ $(function() {
 
     window.onkeyup = function(event){
         // Static movement
-        window.clearInterval(moveIntervalId);        
-        moveAnimationStarted = false;
+        window.clearInterval(staticIntervalId);
+        window.clearInterval(moveIntervalId);        moveAnimationStarted = false;
         moveAttackAnimationStarted = false;
         staticIntervalId = moveMethod.static();
     }
@@ -461,7 +461,7 @@ $(function() {
 
             if (moveAnimationStarted === false) {
                 window.clearInterval(staticIntervalId);
-                moveIntervalId = moveMethod.moveRight(10, 350);
+                window.clearInterval(moveIntervalId);                moveIntervalId = moveMethod.moveRight(10, 350);
                 moveAnimationStarted = true;
             }
             lastPosition = 'rightSide';            
@@ -472,7 +472,7 @@ $(function() {
 
             if (moveAnimationStarted === false) {
                 window.clearInterval(staticIntervalId);
-                moveIntervalId = moveMethod.moveLeft(-10, 800);
+                window.clearInterval(moveIntervalId);                moveIntervalId = moveMethod.moveLeft(-10, 800);
                 moveAnimationStarted = true;
             }
             lastPosition = 'leftSide';            
@@ -484,12 +484,14 @@ $(function() {
             if (lastPosition == 'rightSide') {
                 if (moveAttackAnimationStarted === false) {
                     window.clearInterval(staticIntervalId);
+                    window.clearInterval(moveIntervalId);
                     moveIntervalId = moveMethod.actionAttackRight();
                     moveAttackAnimationStarted = true;
                 }
             } else if (lastPosition == 'leftSide') {
                 if (moveAttackAnimationStarted === false) {
                     window.clearInterval(staticIntervalId);
+                    window.clearInterval(moveIntervalId);
                     moveIntervalId = moveMethod.actionAttackLeft();
                     moveAttackAnimationStarted = true;
                 }

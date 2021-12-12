@@ -3,7 +3,7 @@
 const $enemyContainer = $('.enemyContainer');
 const $enemyContent = $('enemyContent');
 
-var InitialEnemyPosition = windowSize * .80;
+var InitialEnemyPosition = windowSize * .70;
 
 const moveEnemyMethod = {
     moveLeft: function() {

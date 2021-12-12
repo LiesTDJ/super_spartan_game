@@ -1,6 +1,6 @@
 Problème à résoudre:
-- bug de static qd on keyup.
-- bug plusieurs touches en même temps.
+- bug de static qd on keyup. FAIT!!!
+- bug plusieurs touches en même temps. FAIT!!!
 - latence lorsque le perso arrive vers les bords pour changer de sens de marche
 
 Chose à faire:
