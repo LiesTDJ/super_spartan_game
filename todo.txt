@@ -1,0 +1,15 @@
+Problème à résoudre:
+- bug de static qd on keyup.
+
+Chose à faire:
+
+-mettre des effets sonores
+
+-faire bouger l'ennemie vers le perso.
+-faire animer l'ennemie en marchant et mourant
+-faire interagir les dégats ennemies sur perso
+-faire interagir les dégats du perso sur ennemie
+
+-faire apparaître les bonus/success
+
+-faire defiler le BG.

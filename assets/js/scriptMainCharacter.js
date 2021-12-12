@@ -419,7 +419,7 @@ const moveMethod = {
 
 
 $(function() {
-    
+
     //Setting of the initial position of the character
     $container.css('left', InitialCharacterPosition);
 
