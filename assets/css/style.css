@@ -18,7 +18,11 @@ main {
     margin-top: auto;
 }
 #gameField {
-    background-image: url(../img/NATURE_PARALLAX_BG/bgPerso3.png);
+    /**************************************************************************
+                            The parallax background
+    **************************************************************************/
+    background-image: url("../img/NATURE_PARALLAX_BG/PNG/parallaxPerso/parallaxPersoPlan1.png"),  url("../img/NATURE_PARALLAX_BG/PNG/parallaxPerso/parallaxPersoPlan2.png"),  url("../img/NATURE_PARALLAX_BG/PNG/parallaxPerso/parallaxPersoPlan3.png"),  url("../img/NATURE_PARALLAX_BG/PNG/parallaxPerso/parallaxPersoPlan4.png");
+    background-position-x:15px, 150px, 25px, 15px;
     background-size: cover;
     border: 15px solid goldenrod;
     border-radius: 25px;

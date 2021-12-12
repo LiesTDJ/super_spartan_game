@@ -1,5 +1,6 @@
 Problème à résoudre:
 - bug de static qd on keyup.
+- bug plusieurs touches en même temps.
 
 Chose à faire:
 
@@ -12,4 +13,4 @@ Chose à faire:
 
 -faire apparaître les bonus/success
 
--faire defiler le BG.
+-faire defiler le BG. FAIT!!!

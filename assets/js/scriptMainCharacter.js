@@ -285,7 +285,7 @@ const spriteMovePosition = {
     ]
 };
 
-
+const $gameField = $('#gameField');
 const $container = $('.container');
 const $content = $('.content');
 var lastPosition = 'rightSide'; // keep in a var the last position of the character
@@ -385,6 +385,7 @@ const moveMethod = {
     moveRight: function(addPosition, limitPosition) {
         let i = 0;
         let idInterval = setInterval(function(){
+            moveMethod.bgParallaxRight();
             moveMethod.spriteMovementAction(addPosition, limitPosition)
             let length = spriteMovePosition.runRight.length; 
             let newPositionLeft = spriteMovePosition.runRight[i].spritePositionLeft;
@@ -402,6 +403,7 @@ const moveMethod = {
     moveLeft: function(addPosition, limitPosition) {
         let i = 0;
         let idInterval = setInterval(function(){
+            moveMethod.bgParallaxLeft();
             moveMethod.spriteMovementAction(addPosition, limitPosition)
             let length = spriteMovePosition.runLeft.length; 
             let newPositionLeft = spriteMovePosition.runLeft[i].spritePositionLeft;
@@ -414,6 +416,32 @@ const moveMethod = {
         },50);
         console.log('moveLeft');
         return idInterval;
+    },
+    bgParallaxRight: function() {
+        let bgPosition = $gameField.css('background-position-x');
+        let bgArrayPosition = bgPosition.split('px, ');
+        bgArrayPosition[0] = parseInt(bgArrayPosition[0]) - 15;
+        bgArrayPosition[1] = parseInt(bgArrayPosition[1]) - 7;
+        bgArrayPosition[2] = parseInt(bgArrayPosition[2]) - 3;
+        bgPosition = bgArrayPosition[0] + 'px, ' +
+        bgArrayPosition[1] + 'px, ' +
+        bgArrayPosition[2] + 'px, 15px';
+        $gameField.css('background-position-x', bgPosition);
+        console.log("🚀 ~ file: scriptMainCharacter.js ~ line 428 ~ bgPositionRight", bgPosition)
+        
+    },
+    bgParallaxLeft: function() {
+        let bgPosition = $gameField.css('background-position-x');
+        let bgArrayPosition = bgPosition.split('px, ');
+        bgArrayPosition[0] = parseInt(bgArrayPosition[0]) + 15;
+        bgArrayPosition[1] = parseInt(bgArrayPosition[1]) + 7;
+        bgArrayPosition[2] = parseInt(bgArrayPosition[2]) + 3;
+        bgPosition = bgArrayPosition[0] + 'px, ' +
+        bgArrayPosition[1] + 'px, ' +
+        bgArrayPosition[2] + 'px, 15px';
+        $gameField.css('background-position-x', bgPosition);
+        console.log("🚀 ~ file: scriptMainCharacter.js ~ line 428 ~ bgPositionLeft", bgPosition)
+        
     }
 };
 
