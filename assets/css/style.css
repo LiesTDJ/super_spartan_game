@@ -1,31 +1,31 @@
 body {
     background-color: slategrey;
 }
-footer {
-    display: inline-flex;
-    padding-right: 5%;
-    position: static;
-    display: contents;
+main {
+    display: flex;
 }
-aside {
-    border: 5px solid rgb(207, 128, 0);
+#commandeList {
+    background-color: rgba(255, 255, 240, 0.712);
+    border: 5px solid gold;
     border-radius: 15px;
-}
-aside h2,p {
-    align-items: center;
+    display: inline-block;
+    width: 20%;
+    height: fit-content;
+    margin-bottom: auto;
+    margin-top: auto;
 }
 #gameField {
     background-image: url(../img/NATURE_PARALLAX_BG/bgPerso3.png);
     background-size: cover;
-    border: 15px solid rgb(185, 173, 0);
+    border: 15px solid goldenrod;
     border-radius: 25px;
-    display: block;
+    display: inline-block;
     height: 500px;
-    margin-bottom: 25px;
-    margin-left: 25%;
-    margin-right: 5%;
-    margin-top: 25px;
-    width: auto;
+    margin-bottom: 1%;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-top: 1%;
+    width: 1100px;
 }
 .container {
     height: 145px;
