@@ -1,10 +1,11 @@
 Problème à résoudre:
 - bug de static qd on keyup.
 - bug plusieurs touches en même temps.
+- latence lorsque le perso arrive vers les bords pour changer de sens de marche
 
 Chose à faire:
 
--mettre des effets sonores
+-mettre des effets sonores!!!
 
 -faire bouger l'ennemie vers le perso.
 -faire animer l'ennemie en marchant et mourant

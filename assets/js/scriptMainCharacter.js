@@ -315,7 +315,6 @@ const moveMethod = {
                     i = 0;
                 }
             },125);
-            console.log('static move');
             return idInterval;
         } else if (lastPosition == 'leftSide') {
             let i = 0;
@@ -329,7 +328,6 @@ const moveMethod = {
                     i = 0;
                 }
             },125);
-            console.log('static move');
             return idInterval;
         }
     },
@@ -348,7 +346,6 @@ const moveMethod = {
                 moveAttackAnimationStarted = false;
             }
         },75);
-        console.log('actionAttackRight');
         return idInterval;
     },
 
@@ -364,7 +361,6 @@ const moveMethod = {
                 i = 0;
             }
         },75);
-        console.log('actionAttackLeft');
         return idInterval;
     },
 
@@ -396,7 +392,6 @@ const moveMethod = {
                 i = 0;
             }
         },50);
-        console.log('moveRight');
         return idInterval;
     },
 
@@ -414,7 +409,6 @@ const moveMethod = {
                 i = 0;
             }
         },50);
-        console.log('moveLeft');
         return idInterval;
     },
     bgParallaxRight: function() {
@@ -427,7 +421,6 @@ const moveMethod = {
         bgArrayPosition[1] + 'px, ' +
         bgArrayPosition[2] + 'px, 15px';
         $gameField.css('background-position-x', bgPosition);
-        console.log("🚀 ~ file: scriptMainCharacter.js ~ line 428 ~ bgPositionRight", bgPosition)
         
     },
     bgParallaxLeft: function() {
@@ -440,7 +433,6 @@ const moveMethod = {
         bgArrayPosition[1] + 'px, ' +
         bgArrayPosition[2] + 'px, 15px';
         $gameField.css('background-position-x', bgPosition);
-        console.log("🚀 ~ file: scriptMainCharacter.js ~ line 428 ~ bgPositionLeft", bgPosition)
         
     }
 };
