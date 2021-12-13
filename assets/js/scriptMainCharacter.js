@@ -293,7 +293,7 @@ var lastPosition = 'rightSide'; // keep in a var the last position of the charac
 const windowSize = window.innerWidth;
 console.log("🚀 ~ file: script.js ~ line 294 ~ windowSize", windowSize);
 
-var InitialCharacterPosition = windowSize / 3;
+var InitialCharacterPosition = 250;
 var elementMove = InitialCharacterPosition;
 
 var moveIntervalId = 0;
@@ -331,8 +331,12 @@ const moveMethod = {
             return idInterval;
         }
     },
-
+    
     actionAttackRight: function() {
+        
+        // The enemy is getting hurt
+        moveEnemyMethod.hurtEnemy();
+
         let i = 0;
         let idInterval = setInterval(function(){
             let length = spriteMovePosition.attackRight.length; 
@@ -349,7 +353,7 @@ const moveMethod = {
         return idInterval;
     },
 
-    actionAttackLeft: function() {
+    actionAttackLeft: function() {        
         let i = 0;
         let idInterval = setInterval(function(){
             let length = spriteMovePosition.attackLeft.length; 
@@ -364,12 +368,12 @@ const moveMethod = {
         return idInterval;
     },
 
-    spriteMovementAction: function(addPosition, limitPosition) {
+    spriteMovementAction: function(addPosition) {
         //The character should not got out of the game field
-        if (elementMove <= windowSize / 3) { //For the left move
+        if (elementMove <= 250) { //For the left move
             elementMove = elementMove + 1;
             $container.css('left', elementMove);
-        } else if (elementMove >= windowSize * .65) { //for the right move
+        } else if (elementMove >= 750) { //for the right move
             elementMove = elementMove - 1;
             $container.css('left', elementMove);
         } else {
@@ -378,11 +382,11 @@ const moveMethod = {
         }
     },
 
-    moveRight: function(addPosition, limitPosition) {
+    moveRight: function(addPosition) {
         let i = 0;
         let idInterval = setInterval(function(){
             moveMethod.bgParallaxRight();
-            moveMethod.spriteMovementAction(addPosition, limitPosition)
+            moveMethod.spriteMovementAction(addPosition);
             let length = spriteMovePosition.runRight.length; 
             let newPositionLeft = spriteMovePosition.runRight[i].spritePositionLeft;
             $content.css('left', newPositionLeft);
@@ -395,11 +399,11 @@ const moveMethod = {
         return idInterval;
     },
 
-    moveLeft: function(addPosition, limitPosition) {
+    moveLeft: function(addPosition) {
         let i = 0;
         let idInterval = setInterval(function(){
             moveMethod.bgParallaxLeft();
-            moveMethod.spriteMovementAction(addPosition, limitPosition)
+            moveMethod.spriteMovementAction(addPosition);
             let length = spriteMovePosition.runLeft.length; 
             let newPositionLeft = spriteMovePosition.runLeft[i].spritePositionLeft;
             $content.css('left', newPositionLeft);
@@ -434,6 +438,29 @@ const moveMethod = {
         bgArrayPosition[2] + 'px, 15px';
         $gameField.css('background-position-x', bgPosition);
         
+    },
+    deathAction: function() {
+        let i = 0;
+        let idInterval = setInterval(function(){            
+            window.clearInterval(staticIntervalId);
+            window.clearInterval(moveIntervalId);
+            let length = spriteMovePosition.deathRight.length; 
+            let newPositionLeft = spriteMovePosition.deathRight[i].spritePositionLeft;
+            $content.css('left', newPositionLeft);
+            $container.width(spriteMovePosition.deathRight[i].maskContainerWidth);
+            i++;
+            if (i == spriteMovePosition.deathRight.length) {
+                i = 0;
+                clearInterval(idInterval);
+            }
+        },50);
+
+        // Make the character disappear after his death.
+        setTimeout(function() {$container.addClass('deadCharacter');}, 600);
+        setTimeout(function() {$container.css('display', 'none')},1000);
+        let alertRetry = 'GAME OVER. Press "OK" to try again.';
+        setTimeout(function() {alert(alertRetry)},1600);
+        setTimeout(function() {location.reload();},1601);
     }
 };
 
@@ -461,7 +488,7 @@ $(function() {
 
             if (moveAnimationStarted === false) {
                 window.clearInterval(staticIntervalId);
-                window.clearInterval(moveIntervalId);                moveIntervalId = moveMethod.moveRight(10, 350);
+                window.clearInterval(moveIntervalId);                moveIntervalId = moveMethod.moveRight(10);
                 moveAnimationStarted = true;
             }
             lastPosition = 'rightSide';            
@@ -472,7 +499,8 @@ $(function() {
 
             if (moveAnimationStarted === false) {
                 window.clearInterval(staticIntervalId);
-                window.clearInterval(moveIntervalId);                moveIntervalId = moveMethod.moveLeft(-10, 800);
+                window.clearInterval(moveIntervalId);
+                moveIntervalId = moveMethod.moveLeft(-10);
                 moveAnimationStarted = true;
             }
             lastPosition = 'leftSide';            
