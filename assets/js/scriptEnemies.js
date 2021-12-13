@@ -45,8 +45,8 @@ const moveEnemyMethod = {
             if (lifeCountEnemy == 0) {
                 // Make the enemy disappear after his death.
                 setTimeout(function() {$enemyContainer.addClass('deadCharacter');}, 600);
-                setTimeout(function() {$enemyContainer.css('display', 'none')},600);
-                setTimeout(function() {$enemyContainer.removeClass('enemyContainer')},700);
+
+                $enemyContainer.parentNode.removeChild($enemyContainer);
             }
         }
     }
