@@ -11,9 +11,11 @@ Problème à résoudre:
 Chose à faire:
 
 -Faire la page d'intro:
-    -lien vers le jeu
-    -lien vers le whire
-    -lien vers le téléchargement du cv
+    -Encadrer à gauche avec m^me charte graphique que la page de jeu
+
+    -lien vers le jeu FAIT!!!
+    -lien vers le linkedIn FAIT!!!
+    -lien vers le téléchargement du cv FAIT!!!
     
 -faire interagir les dégâts du perso sur ennemie
 -faire animer l'ennemie en marchant et mourant

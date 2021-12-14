@@ -8,8 +8,8 @@ var InitialEnemyPosition = 700;
 var moveEnemyIntervalId = 0;
 
 
-var lifeCountCharacter = 4;
-var lifeCountEnemy = 4;
+var lifeCountCharacter = 3;
+var lifeCountEnemy = 9;
 
 const $trophy1 = $('.trophy1');
 const $trophy2 = $('.trophy2');
@@ -25,8 +25,8 @@ const moveEnemyMethod = {
     },
     attackEnemyAction: function() {
         if (parseFloat($container.css('left')) + 40 >= parseFloat($enemyContainer.css('left'))) { 
-        //Sound of the character dying
-        audioDeathCharacter.play();
+            //Sound of the character dying
+            audioDeathCharacter.play();
 
             let curentCharacterPosition = parseFloat($container.css('left'));
             curentCharacterPosition = parseFloat($container.css('left')) - 60;
@@ -41,12 +41,12 @@ const moveEnemyMethod = {
     },
     hurtEnemy: function() {
         if (parseFloat($container.css('left')) + 150 >= parseFloat($enemyContainer.css('left'))) {           
-        //Sound of the enemy dying
-        audioEnemyHurt.play();
+            //Sound of the enemy dying
+            audioEnemyHurt.play();
 
 
             let curentEnemyPosition = parseFloat($enemyContainer.css('left'));
-            curentEnemyPosition = parseFloat($enemyContainer.css('left')) + 100;
+            curentEnemyPosition = parseFloat($enemyContainer.css('left')) + 125;
             $enemyContainer.css('left', curentEnemyPosition);
     
             lifeCountEnemy = lifeCountEnemy - 1;
@@ -55,17 +55,17 @@ const moveEnemyMethod = {
 
             // Appearing of the trophies
 
-            if (lifeCountEnemy == 3) {
+            if (lifeCountEnemy == 6) {
                 $trophy1.css('display', 'flex');
                 console.log('1er trophée');
             }
 
-            if (lifeCountEnemy == 2) {
+            if (lifeCountEnemy == 3) {
                 $trophy2.css('display', 'flex');
                 console.log('2ème trophée');
             }
 
-            if (lifeCountEnemy == 1) {
+            if (lifeCountEnemy == 0) {
                 $trophy3.css('display', 'flex');
                 console.log('3ème trophée');
             }
