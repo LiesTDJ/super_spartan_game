@@ -1,0 +1,18 @@
+body {
+    background-color: slategray;
+}
+/******************************************************************************
+                            Mise en forme du CV
+******************************************************************************/
+.cv {
+    background-image: url(../img/cv_micro.png) ;
+    background-repeat: no-repeat;
+}
+.cv:hover {
+    background-image: url(../img/cv_mini.png) ;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+
+
+}

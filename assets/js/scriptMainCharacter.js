@@ -349,7 +349,7 @@ const moveMethod = {
                 clearInterval(idInterval);
                 moveAttackAnimationStarted = false;
             }
-        },75);
+        },45);
         return idInterval;
     },
 
@@ -364,7 +364,7 @@ const moveMethod = {
             if (i == spriteMovePosition.attackLeft.length) {
                 i = 0;
             }
-        },75);
+        },45);
         return idInterval;
     },
 
@@ -458,9 +458,11 @@ const moveMethod = {
         // Make the character disappear after his death.
         setTimeout(function() {$container.addClass('deadCharacter');}, 600);
         setTimeout(function() {$container.css('display', 'none')},1000);
-        let alertRetry = 'GAME OVER. Press "OK" to try again.';
-        setTimeout(function() {alert(alertRetry)},1600);
-        setTimeout(function() {location.reload();},1601);
+        let alertRetry = 'GAME OVER. Cliquez "OK" pour recommencer.';
+        setTimeout(function() {
+            alert(alertRetry);
+            location.reload();
+        },1600);
     }
 };
 

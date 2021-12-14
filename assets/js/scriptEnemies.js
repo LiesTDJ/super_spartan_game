@@ -5,6 +5,8 @@ const $enemyContent = $('enemyContent');
 
 
 var InitialEnemyPosition = 700;
+var moveEnemyIntervalId = 0;
+
 
 var lifeCountCharacter = 4;
 var lifeCountEnemy = 4;
@@ -44,9 +46,17 @@ const moveEnemyMethod = {
     
             if (lifeCountEnemy == 0) {
                 // Make the enemy disappear after his death.
-                setTimeout(function() {$enemyContainer.addClass('deadCharacter');}, 600);
+                setTimeout(function() {
+                    $enemyContainer.addClass('deadCharacter');
+                }, 600);
 
-                $enemyContainer.parentNode.removeChild($enemyContainer);
+                setTimeout(function() {
+                    $enemyContainer.removeClass('enemyContainer').addClass('enemyNoneContainer');
+
+                    alert('BRAVO, vous avez battu Mr WWW!');
+                    location.href = 'score.html';
+
+                }, 1500);
             }
         }
     }
@@ -55,7 +65,8 @@ const moveEnemyMethod = {
 $(function() {
     $enemyContainer.css('left', InitialEnemyPosition);
 
-    moveEnemyMethod.moveLeft();
+    moveEnemyIntervalId = moveEnemyMethod.moveLeft();
 
     setInterval(moveEnemyMethod.attackEnemyAction, 100);
+    
 });

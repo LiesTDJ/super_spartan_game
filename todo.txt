@@ -7,10 +7,10 @@ Chose à faire:
 
 -mettre des effets sonores!!!
 
--faire bouger l'ennemie vers le perso.
+-faire bouger l'ennemie vers le perso. FAIT!!!
 -faire animer l'ennemie en marchant et mourant
--faire interagir les dégats ennemies sur perso
--faire interagir les dégats du perso sur ennemie
+-faire interagir les dégâts ennemies sur perso FAIT!!!
+-faire interagir les dégâts du perso sur ennemie
 
 -faire apparaître les bonus/success
 
