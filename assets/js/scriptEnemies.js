@@ -11,7 +11,9 @@ var moveEnemyIntervalId = 0;
 var lifeCountCharacter = 4;
 var lifeCountEnemy = 4;
 
-var enemyPosition
+const $trophy1 = $('.trophy1');
+const $trophy2 = $('.trophy2');
+const $trophy3 = $('.trophy3');
 
 const moveEnemyMethod = {
     moveLeft: function() {
@@ -43,6 +45,23 @@ const moveEnemyMethod = {
             lifeCountEnemy = lifeCountEnemy - 1;
 
             console.log("🚀 ~ file: scriptEnemies.js ~ line 42 ~  lifeCountEnemy", lifeCountEnemy)
+
+            // Appearing of the trophies
+
+            if (lifeCountEnemy == 3) {
+                $trophy1.css('display', 'flex');
+                console.log('1er trophée');
+            }
+
+            if (lifeCountEnemy == 2) {
+                $trophy2.css('display', 'flex');
+                console.log('2ème trophée');
+            }
+
+            if (lifeCountEnemy == 1) {
+                $trophy3.css('display', 'flex');
+                console.log('3ème trophée');
+            }
     
             if (lifeCountEnemy == 0) {
                 // Make the enemy disappear after his death.

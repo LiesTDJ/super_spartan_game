@@ -88,9 +88,12 @@ main {
                             Trophies
 ******************************************************************************/
 .successList {
-    top: 0px;
-    right: 0px;
+    display: flex;
+}
+.trophy1, .trophy2, .trophy3 {
+    display: none;
     padding: 5px;
-    position: absolute;
-
+    position: relative;
+    right: 0px;
+    top: 0px;
 }
