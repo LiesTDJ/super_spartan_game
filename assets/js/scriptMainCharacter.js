@@ -285,6 +285,12 @@ const spriteMovePosition = {
     ]
 };
 
+// audio of the game
+var audioRunCharacter = new Audio('../audio/footsteps.mp3');
+var audioDeathCharacter = new Audio('../audio/characterDeath.mp3');
+var audioEnemyHurt = new Audio('../audio/enemyHurt.mp3');
+var audioAttacksCharacter = new Audio('../audio/characterAttacks.mp3');
+
 const $gameField = $('#gameField');
 const $container = $('.container');
 const $content = $('.content');
@@ -333,6 +339,8 @@ const moveMethod = {
     },
     
     actionAttackRight: function() {
+        //Sound of the character attacking
+        audioAttacksCharacter.play();
         
         // The enemy is getting hurt
         moveEnemyMethod.hurtEnemy();
@@ -353,7 +361,10 @@ const moveMethod = {
         return idInterval;
     },
 
-    actionAttackLeft: function() {        
+    actionAttackLeft: function() {  
+        //Sound of the character attacking
+        audioAttacksCharacter.play();
+              
         let i = 0;
         let idInterval = setInterval(function(){
             let length = spriteMovePosition.attackLeft.length; 
@@ -369,6 +380,9 @@ const moveMethod = {
     },
 
     spriteMovementAction: function(addPosition) {
+        //Sound of the running character
+        audioRunCharacter.play();
+
         //The character should not got out of the game field
         if (elementMove <= 250) { //For the left move
             elementMove = elementMove + 1;

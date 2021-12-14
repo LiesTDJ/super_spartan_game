@@ -25,6 +25,9 @@ const moveEnemyMethod = {
     },
     attackEnemyAction: function() {
         if (parseFloat($container.css('left')) + 40 >= parseFloat($enemyContainer.css('left'))) { 
+        //Sound of the character dying
+        audioDeathCharacter.play();
+
             let curentCharacterPosition = parseFloat($container.css('left'));
             curentCharacterPosition = parseFloat($container.css('left')) - 60;
             $container.css('left', curentCharacterPosition);
@@ -37,7 +40,11 @@ const moveEnemyMethod = {
         }
     },
     hurtEnemy: function() {
-        if (parseFloat($container.css('left')) + 150 >= parseFloat($enemyContainer.css('left'))) { 
+        if (parseFloat($container.css('left')) + 150 >= parseFloat($enemyContainer.css('left'))) {           
+        //Sound of the enemy dying
+        audioEnemyHurt.play();
+
+
             let curentEnemyPosition = parseFloat($enemyContainer.css('left'));
             curentEnemyPosition = parseFloat($enemyContainer.css('left')) + 100;
             $enemyContainer.css('left', curentEnemyPosition);

@@ -1,17 +1,30 @@
 Problème à résoudre:
+
+-le son du character hurt ne s'arrête pas, il faut stopper l'ennemi.
+- latence lorsque le perso arrive vers les bords pour changer de sens de marche.
+-Le display none de l'ennemi ne le fait pas disparaître, tjrs des coup donnés.
+
 - bug de static qd on keyup. FAIT!!!
 - bug plusieurs touches en même temps. FAIT!!!
-- latence lorsque le perso arrive vers les bords pour changer de sens de marche
+
 
 Chose à faire:
 
--mettre des effets sonores!!!
-
--faire bouger l'ennemie vers le perso. FAIT!!!
--faire animer l'ennemie en marchant et mourant
--faire interagir les dégâts ennemies sur perso FAIT!!!
+-Faire la page d'intro:
+    -lien vers le jeu
+    -lien vers le whire
+    -lien vers le téléchargement du cv
+    
 -faire interagir les dégâts du perso sur ennemie
+-faire animer l'ennemie en marchant et mourant
 
--faire apparaître les bonus/success
-
+-mettre des effets sonores. FAIT!!!
+-faire bouger l'ennemie vers le perso. FAIT!!!
+-faire interagir les dégâts ennemies sur perso FAIT!!!
+-faire apparaître les bonus/success FAIT!!!
 -faire defiler le BG. FAIT!!!
+
+
+chose à faire si il y a le temps:
+
+-Faire progressivement apparaître les trophées.
