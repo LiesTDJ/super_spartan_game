@@ -1,25 +1,10 @@
 'use strict'
 
-const $enemyContainer = $('.enemyContainer');
-const $enemyContent = $('enemyContent');
-
-
-var InitialEnemyPosition = 700;
-var moveEnemyIntervalId = 0;
-
-
-var lifeCountCharacter = 3;
-var lifeCountEnemy = 9;
-
-const $trophy1 = $('.trophy1');
-const $trophy2 = $('.trophy2');
-const $trophy3 = $('.trophy3');
-
 const moveEnemyMethod = {
     moveLeft: function() {
         let idInterval = setInterval(function() {
             let curentEnemyPosition = parseFloat($enemyContainer.css('left'));
-            if (lifeCountCharacter > 0) {
+            if (lifeCountCharacter > 0 && lifeCountEnemy > 0) {
                 curentEnemyPosition = curentEnemyPosition - 3;
                 $enemyContainer.css('left', curentEnemyPosition);
             }
@@ -96,7 +81,7 @@ const moveEnemyMethod = {
                     alert('BRAVO, vous avez battu Mr WWW!');
                     location.href = 'score.html';
 
-                }, 1500);
+                }, 7000);
             }
         }
     }
