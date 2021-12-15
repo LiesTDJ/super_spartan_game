@@ -33,7 +33,7 @@ var InitialEnemyPosition = 700;
 var moveEnemyIntervalId = 0;
 
 var lifeCountCharacter = 3;
-var lifeCountEnemy = 9;
+var lifeCountEnemy = 3;
 
 const $trophy1 = $('.trophy1');
 const $trophy2 = $('.trophy2');

@@ -8,6 +8,12 @@ const moveEnemyMethod = {
                 curentEnemyPosition = curentEnemyPosition - 3;
                 $enemyContainer.css('left', curentEnemyPosition);
             }
+             else {
+                setTimeout(function() {
+                    $enemyContainer.css('left', 850);
+                },1100) 
+            }
+            
         },50)
     },
     attackEnemyAction: function() {
@@ -33,7 +39,7 @@ const moveEnemyMethod = {
     },
     hurtEnemy: function() {
         if (parseFloat($container.css('left')) + 150 >= parseFloat($enemyContainer.css('left'))) {           
-            //Sound of the enemy dying
+            //Sound of the enemy getting hurt
             audioEnemyHurt.play();
             
             

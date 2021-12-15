@@ -15,7 +15,7 @@ h1 {
 ******************************************************************************/
 .presentation {    
     text-align: center;
-    background-color: ivory;
+    background-color: #f4f0d8;
     border: 5px solid gold;
     border-radius: 15px;
     display: inline-block;
@@ -46,7 +46,7 @@ main {
     width: 1100px;
 }
 .link {
-    background-color: ivory;
+    background-color: #f4f0d8;
     border: 15px solid yellow;
     border-radius: 15px;
     font-weight: bolder;
