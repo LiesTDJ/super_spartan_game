@@ -1,5 +1,7 @@
 body {
-    background-color: slategrey;
+    background: linear-gradient(0.25turn,#fde170, #81bbdf);
+    background-size:cover;
+    background-repeat: repeat;
     font-size: 1.3em;
 }
 h1 {
