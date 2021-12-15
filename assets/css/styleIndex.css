@@ -1,13 +1,43 @@
+/* alegreya-regular - latin */
+@font-face {
+    font-family: 'Alegreya';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../../vendors/fonts/alegreya-v19-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local(''),
+        url('../../vendors/fonts/alegreya-v19-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('../../vendors/fonts/alegreya-v19-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+        url('../../vendors/fonts/alegreya-v19-latin-regular.woff') format('woff'), /* Modern Browsers */
+        url('../../vendors/fonts/alegreya-v19-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+        url('../../vendors/fonts/alegreya-v19-latin-regular.svg#Alegreya') format('svg'); /* Legacy iOS */
+}
+/* alegreya-800 - latin */
+@font-face {
+    font-family: 'Alegreya';
+    font-style: normal;
+    font-weight: 800;
+    src: url('../../vendors/fonts/alegreya-v19-latin-800.eot'); /* IE9 Compat Modes */
+    src: local(''),
+        url('../../vendors/fonts/alegreya-v19-latin-800.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('../../vendors/fonts/alegreya-v19-latin-800.woff2') format('woff2'), /* Super Modern Browsers */
+        url('../../vendors/fonts/alegreya-v19-latin-800.woff') format('woff'), /* Modern Browsers */
+        url('../../vendors/fonts/alegreya-v19-latin-800.ttf') format('truetype'), /* Safari, Android, iOS */
+        url('../../vendors/fonts/alegreya-v19-latin-800.svg#Alegreya') format('svg'); /* Legacy iOS */
+}
+
 body {
     background: linear-gradient(0.25turn,#fde170, #81bbdf);
     background-size:cover;
     background-repeat: repeat;
+    font-family: "Alegreya";
     font-size: 1.3em;
+    font-weight: 400;
 }
 a {
     text-decoration: none;
 }
 h1 {
+    font-weight: 800;
     margin-left: 22%;
 }
 
@@ -15,25 +45,26 @@ h1 {
                                 Home button
 ******************************************************************************/
 .home {
+    left: 1%;
     position: fixed;
     top: 1%;
-    left: 1%;
 }
 
 /******************************************************************************
                             Presentation section
 ******************************************************************************/
 .presentation {    
-    text-align: center;
+    font-size: 0.8em;
     background-color: #f4f0d8;
     border: 5px solid gold;
     border-radius: 15px;
     display: inline-block;
-    width: 20%;
     height: fit-content;
     margin-bottom: auto;
     margin-top: auto;
     padding: 5px;
+    text-align: center;
+    width: 20%;
 }
 /******************************************************************************
                                 Choice section
@@ -42,8 +73,7 @@ main {
     display: flex;
 }
 .choice {
-    background: linear-gradient(#81bbdf, #fde170);
- 
+    background: linear-gradient(#81bbdf, #fde170); 
     border: 15px solid goldenrod;
     border-radius: 25px;
     display: flex;
@@ -57,17 +87,17 @@ main {
 }
 .link {
     background-color: #f4f0d8;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
     border: 15px solid yellow;
     border-radius: 15px;
     font-weight: bolder;
     font-size: 1.1em;
-    position: relative;
     justify-content: space-between;
     margin: auto;
     padding: 7%;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+    position: relative;
 }
 .cv {
     background-image: url("../img/cv/cv_mini.png");

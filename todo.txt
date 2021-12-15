@@ -9,7 +9,9 @@ Problème à résoudre:
 
 
 Chose à faire:
-
+-trouver une font et la mettre FAIT!!!
+-mettre le pdf telecharger en lien FAIT!!!
+-changer lien en Whire sur score FAIT!!!
 
 -Faire la page d'intro:
     -Encadrer à gauche avec même charte graphique que la page de jeu FAIT!!!
