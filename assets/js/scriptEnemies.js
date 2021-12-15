@@ -19,22 +19,29 @@ const moveEnemyMethod = {
     moveLeft: function() {
         let idInterval = setInterval(function() {
             let curentEnemyPosition = parseFloat($enemyContainer.css('left'));
-            curentEnemyPosition = curentEnemyPosition - 3;
-            $enemyContainer.css('left', curentEnemyPosition);
+            if (lifeCountCharacter > 0) {
+                curentEnemyPosition = curentEnemyPosition - 3;
+                $enemyContainer.css('left', curentEnemyPosition);
+            }
         },50)
     },
     attackEnemyAction: function() {
         if (parseFloat($container.css('left')) + 40 >= parseFloat($enemyContainer.css('left'))) { 
-            //Sound of the character dying
-            audioDeathCharacter.play();
+            if (lifeCountCharacter > 0) {
+                //Sound of the character getting hurt
+                audioDeathCharacter.play();
+            }
 
             let curentCharacterPosition = parseFloat($container.css('left'));
             curentCharacterPosition = parseFloat($container.css('left')) - 60;
             $container.css('left', curentCharacterPosition);
-
+            
             lifeCountCharacter = lifeCountCharacter - 1;
 
             if (lifeCountCharacter == 0) {
+                //Sound of the character dying
+                audioLoosing.play();
+
                 moveMethod.deathAction();
             }
         }
@@ -43,26 +50,30 @@ const moveEnemyMethod = {
         if (parseFloat($container.css('left')) + 150 >= parseFloat($enemyContainer.css('left'))) {           
             //Sound of the enemy dying
             audioEnemyHurt.play();
-
-
+            
+            
             let curentEnemyPosition = parseFloat($enemyContainer.css('left'));
             curentEnemyPosition = parseFloat($enemyContainer.css('left')) + 125;
             $enemyContainer.css('left', curentEnemyPosition);
-    
+            
             lifeCountEnemy = lifeCountEnemy - 1;
-
+            
             console.log("🚀 ~ file: scriptEnemies.js ~ line 42 ~  lifeCountEnemy", lifeCountEnemy)
 
             // Appearing of the trophies
-
+            
             if (lifeCountEnemy == 6) {
                 $trophy1.css('display', 'flex');
                 console.log('1er trophée');
+                //Sound of the winning trophy
+                audioTrophyAlert.play();
             }
 
             if (lifeCountEnemy == 3) {
                 $trophy2.css('display', 'flex');
                 console.log('2ème trophée');
+                //Sound of the winning trophy
+                audioTrophyAlert.play();
             }
 
             if (lifeCountEnemy == 0) {
@@ -71,6 +82,9 @@ const moveEnemyMethod = {
             }
     
             if (lifeCountEnemy == 0) {
+                //Sound of the winning award
+                audioWin.play();
+
                 // Make the enemy disappear after his death.
                 setTimeout(function() {
                     $enemyContainer.addClass('deadCharacter');

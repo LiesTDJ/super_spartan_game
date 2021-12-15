@@ -1,10 +1,13 @@
 'use strict'
 
 // audio of the game
-var audioRunCharacter = new Audio('../audio/footsteps.mp3');
-var audioDeathCharacter = new Audio('../audio/characterDeath.mp3');
-var audioEnemyHurt = new Audio('../audio/enemyHurt.mp3');
-var audioAttacksCharacter = new Audio('../audio/characterAttacks.mp3');
+const audioRunCharacter = new Audio('../audio/footsteps.mp3');
+const audioDeathCharacter = new Audio('../audio/characterDeath.mp3');
+const audioEnemyHurt = new Audio('../audio/enemyHurt.mp3');
+const audioAttacksCharacter = new Audio('../audio/characterAttacks.mp3');
+const audioLoosing = new Audio('../audio/loosing.mp3');
+const audioWin = new Audio('../audio/win.mp3');
+const audioTrophyAlert = new Audio('../audio/trophyAlert.mp3');
 
 const $gameField = $('#gameField');
 const $container = $('.container');
@@ -191,7 +194,7 @@ const moveMethod = {
         setTimeout(function() {
             alert(alertRetry);
             location.reload();
-        },1600);
+        },3000);
     }
 };
 
