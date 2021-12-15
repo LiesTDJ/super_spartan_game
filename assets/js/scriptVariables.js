@@ -12,7 +12,7 @@ const audioTrophyAlert = new Audio('../audio/trophyAlert.mp3');
 const $gameField = $('#gameField');
 const $container = $('.container');
 const $content = $('.content');
-var lastPosition = 'rightSide'; // keep in a var the last position of the character
+var lastPosition = 'rightSide'; // keep in a var the last direction/position of the character
 
 const windowSize = window.innerWidth;
 console.log("🚀 ~ file: script.js ~ line 294 ~ windowSize", windowSize);
@@ -33,8 +33,12 @@ var InitialEnemyPosition = 700;
 var moveEnemyIntervalId = 0;
 
 var lifeCountCharacter = 3;
-var lifeCountEnemy = 3;
+var lifeCountEnemy = 9;
 
 const $trophy1 = $('.trophy1');
 const $trophy2 = $('.trophy2');
 const $trophy3 = $('.trophy3');
+
+const $heart1 = $('.heart1');
+const $heart2 = $('.heart2');
+const $heart3 = $('.heart3');

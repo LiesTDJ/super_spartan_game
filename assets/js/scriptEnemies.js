@@ -29,6 +29,20 @@ const moveEnemyMethod = {
             
             lifeCountCharacter = lifeCountCharacter - 1;
 
+            // Life points status of the character:
+
+            if (lifeCountCharacter == 2) {
+                $heart1.css('display', 'none');
+            }
+
+            if (lifeCountCharacter == 1) {
+                $heart2.css('display', 'none');
+            }
+
+            if (lifeCountCharacter == 0) {
+                $heart3.css('display', 'none');
+            }
+
             if (lifeCountCharacter == 0) {
                 //Sound of the character dying
                 audioLoosing.play();
