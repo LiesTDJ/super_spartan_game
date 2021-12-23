@@ -1,3 +1,16 @@
+/******************************************************************************
+        Summary :
+                - Font
+                - Background and font-style
+                - Home button
+                - Presentation section
+                - Choice section
+*******************************************************************************/
+
+
+/******************************************************************************
+                                    Font
+******************************************************************************/
 /* alegreya-regular - latin */
 @font-face {
     font-family: 'Alegreya';
@@ -25,6 +38,9 @@
         url('../../vendors/fonts/alegreya-v19-latin-800.svg#Alegreya') format('svg'); /* Legacy iOS */
 }
 
+/******************************************************************************
+                            Background and font-style
+******************************************************************************/
 body {
     background: linear-gradient(0.25turn,#fde170, #81bbdf);
     background-size:cover;
@@ -35,6 +51,9 @@ body {
 }
 a {
     text-decoration: none;
+}
+p > a {
+    font-weight: bolder;
 }
 h1 {
     font-weight: 800;

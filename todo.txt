@@ -1,5 +1,10 @@
 Problème à résoudre:
 
+- Mettre du responsive et/ou un message pr les petits écrans
+- Action Attack ne doit pas se faire par le maintient d'une touche
+- Faire un compte à rebours au début du jeu
+- Mettre des animations dans la page d'accueil et des scores.
+- Changer les alertes en des perso avec mise en forme: milieu, couleur, hover souris avec animations.
 - latence lorsque le perso arrive vers les bords pour changer de sens de marche.
 
 -Le display none de l'ennemi ne le fait pas disparaître, tjrs des coup donnés. FAIT!!!
