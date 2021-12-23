@@ -111,8 +111,9 @@ main {
     background-size: contain;
     border: 15px solid yellow;
     border-radius: 15px;
-    font-weight: bolder;
+    display: flex;
     font-size: 1.1em;
+    font-weight: bolder;
     justify-content: space-between;
     margin: auto;
     padding: 7%;
@@ -136,4 +137,15 @@ main {
 .linkedin > img {
     margin: 0;
     padding: 0;
+}
+
+/******************************************************************************
+                                    Responsive
+******************************************************************************/
+@media (width < 1080px) {
+    body {
+        background: lawngreen;
+        background-color: lawngreen;
+        display: block;
+    }
 }

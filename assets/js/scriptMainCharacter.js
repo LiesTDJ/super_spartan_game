@@ -182,7 +182,8 @@ $(function() {
     window.onkeyup = function(event){
         // Static movement
         window.clearInterval(staticIntervalId);
-        window.clearInterval(moveIntervalId);        moveAnimationStarted = false;
+        window.clearInterval(moveIntervalId);
+        moveAnimationStarted = false;
         moveAttackAnimationStarted = false;
         staticIntervalId = moveMethod.static();
     }
@@ -197,7 +198,8 @@ $(function() {
 
             if (moveAnimationStarted === false) {
                 window.clearInterval(staticIntervalId);
-                window.clearInterval(moveIntervalId);                moveIntervalId = moveMethod.moveRight(10);
+                window.clearInterval(moveIntervalId);
+                moveIntervalId = moveMethod.moveRight(10);
                 moveAnimationStarted = true;
             }
             lastPosition = 'rightSide';            
