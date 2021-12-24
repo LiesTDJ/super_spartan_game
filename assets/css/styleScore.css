@@ -4,6 +4,8 @@
                 - Background and font-style
                 - Home button
                 - Layout of the trophies
+                - Choice section
+                - Responsive
 *******************************************************************************/
 
 
@@ -75,26 +77,30 @@ main {
     background-color: ivory;
     border: 5px solid gold;
     border-radius: 15px;
-    display: inline-block;
+    display: inline-grid;
     height: fit-content;
     margin-bottom: auto;
     margin-top: auto;
     padding: 5px;
     text-align: center;
-    width: 20%;
+    width: fit-content;
 }
+
+
+/******************************************************************************
+                                Choice section
+******************************************************************************/
 .choice {
-    background: linear-gradient(#81bbdf, #fde170);
- 
+    background: linear-gradient(#81bbdf, #fde170); 
     border: 15px solid goldenrod;
     border-radius: 25px;
     display: flex;
     height: 500px;
     margin-bottom: 1%;
-    margin-left: 22%;
+    margin-left:1%;
     margin-right: 1%;
     margin-top: 1%;
-    position: absolute;
+    position: relative;
     width: 1100px;
 }
 .link {
@@ -129,4 +135,27 @@ main {
 .linkedin > img {
     margin: 0;
     padding: 0;
+}
+
+/******************************************************************************
+                                    Responsive
+******************************************************************************/
+@media all and (max-width: 1024px) {
+    body {
+        display: inline-block;
+    }
+    .choice {
+        margin-left: 20%;
+        display: grid;
+        width: fit-content;
+        height: fit-content;
+        margin: auto;
+        margin-left: 20%;
+    }
+}
+
+@media all and (max-width: 768px) {
+    .choice {
+        margin-left: 5%;        
+    }
 }
