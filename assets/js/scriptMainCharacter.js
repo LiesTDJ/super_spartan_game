@@ -165,11 +165,11 @@ const moveMethod = {
         // Make the character disappear after his death.
         setTimeout(function() {$container.addClass('deadCharacter');}, 600);
         setTimeout(function() {$container.css('display', 'none')},1000);
-        let alertRetry = 'GAME OVER. Cliquez "OK" pour recommencer.';
-        setTimeout(function() {
-            alert(alertRetry);
-            location.reload();
-        },3000);
+        // let alertRetry = 'GAME OVER. Cliquez "OK" pour recommencer.';
+        // setTimeout(function() {
+        //     alert(alertRetry);
+        //     location.reload();
+        // },3000);
     }
 };
 

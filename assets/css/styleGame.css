@@ -8,6 +8,7 @@
                 - The main character
                 - The enemy
                 - Trophies
+                - Tactile Command
                 - Responsive
 *******************************************************************************/
 
@@ -108,7 +109,7 @@ main {
     margin-right: 1%;
     margin-top: 1%;
     position: relative;
-    width: 1100px;
+    width: 1200px;
 }
 /******************************************************************************
                                 The main character
@@ -137,7 +138,8 @@ main {
 
 .lifeCountCharacter {
     position: relative;
-    margin-top: -15%;
+    margin-top: -12%;
+    margin-left: 1%;
 }
 
 /******************************************************************************
@@ -160,7 +162,7 @@ main {
 }   
 
 /******************************************************************************
-                            Trophies
+                                    Trophies
 ******************************************************************************/
 .successList {
     display: flex;
@@ -174,9 +176,25 @@ main {
 }
 
 /******************************************************************************
-                                    Responsive
+Tactile Command
 ******************************************************************************/
-@media all and (max-width: 1024px) {
+.tactileCommand {
+    position: fixed;
+    margin-top: 465px;
+    display: flex;
+    margin-left: 40%;
+    z-index: 2;
+    align-items: center;
+}
+.commandTouch {
+    margin : 10%;
+}
+
+
+/******************************************************************************
+                                Responsive
+******************************************************************************/
+@media all and (max-width: 1200px) {
     body {
         display: inline-block;
     }

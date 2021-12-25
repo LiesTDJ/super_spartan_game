@@ -6,6 +6,7 @@ Problème à résoudre:
 - Mettre des animations dans la page d'accueil et des scores.
 - Changer les alertes en des perso avec mise en forme: milieu, couleur, hover souris avec animations.
 - latence lorsque le perso arrive vers les bords pour changer de sens de marche.
+- changer le sprite de l'ennemi en Mr JS et le faire animer lors de la marche et du coup reçu/porté.
 
 -Le display none de l'ennemi ne le fait pas disparaître, tjrs des coup donnés. FAIT!!!
 -le son du character hurt ne s'arrête pas, il faut stopper l'ennemi. FAIT!!!
