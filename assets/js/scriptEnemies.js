@@ -24,7 +24,7 @@ const moveEnemyMethod = {
             }
 
             let curentCharacterPosition = parseFloat($container.css('left'));
-            curentCharacterPosition = parseFloat($container.css('left')) - 60;
+            curentCharacterPosition = parseFloat($container.css('left')) - 80;
             $container.css('left', curentCharacterPosition);
             
             lifeCountCharacter = lifeCountCharacter - 1;

@@ -122,6 +122,7 @@ const moveMethod = {
         },50);
         return idInterval;
     },
+
     bgParallaxRight: function() {
         let bgPosition = $gameField.css('background-position-x');
         let bgArrayPosition = bgPosition.split('px, ');
@@ -134,6 +135,7 @@ const moveMethod = {
         $gameField.css('background-position-x', bgPosition);
         
     },
+
     bgParallaxLeft: function() {
         let bgPosition = $gameField.css('background-position-x');
         let bgArrayPosition = bgPosition.split('px, ');
@@ -146,6 +148,7 @@ const moveMethod = {
         $gameField.css('background-position-x', bgPosition);
         
     },
+
     deathAction: function() {
         let i = 0;
         let idInterval = setInterval(function(){            
@@ -170,6 +173,44 @@ const moveMethod = {
         //     alert(alertRetry);
         //     location.reload();
         // },3000);
+    },
+
+    case39: function() {
+        if (moveAnimationStarted === false) {
+            window.clearInterval(staticIntervalId);
+            window.clearInterval(moveIntervalId);
+            moveIntervalId = moveMethod.moveRight(10);
+            moveAnimationStarted = true;
+        }
+        lastPosition = 'rightSide';
+    },
+
+    case37: function() {
+        if (moveAnimationStarted === false) {
+            window.clearInterval(staticIntervalId);
+            window.clearInterval(moveIntervalId);
+            moveIntervalId = moveMethod.moveLeft(-10);
+            moveAnimationStarted = true;
+        }
+        lastPosition = 'leftSide';
+    },
+    
+    case32: function() {
+        if (lastPosition == 'rightSide') {
+            if (moveAttackAnimationStarted === false) {
+                window.clearInterval(staticIntervalId);
+                window.clearInterval(moveIntervalId);
+                moveIntervalId = moveMethod.actionAttackRight();
+                moveAttackAnimationStarted = true;
+            }
+        } else if (lastPosition == 'leftSide') {
+            if (moveAttackAnimationStarted === false) {
+                window.clearInterval(staticIntervalId);
+                window.clearInterval(moveIntervalId);
+                moveIntervalId = moveMethod.actionAttackLeft();
+                moveAttackAnimationStarted = true;
+            }
+        }
     }
 };
 
@@ -195,47 +236,26 @@ $(function() {
         switch(code){
             case 39:
             // Move to the right by right arrow key
+            moveMethod.case39();
 
-            if (moveAnimationStarted === false) {
-                window.clearInterval(staticIntervalId);
-                window.clearInterval(moveIntervalId);
-                moveIntervalId = moveMethod.moveRight(10);
-                moveAnimationStarted = true;
-            }
-            lastPosition = 'rightSide';            
             break;
             
             case 37:
             // move to the left by left arrow key
-
-            if (moveAnimationStarted === false) {
-                window.clearInterval(staticIntervalId);
-                window.clearInterval(moveIntervalId);
-                moveIntervalId = moveMethod.moveLeft(-10);
-                moveAnimationStarted = true;
-            }
-            lastPosition = 'leftSide';            
+            moveMethod.case37();
+            
             break;
                 
             case 32:
-            // attack move by space key
-            
-            if (lastPosition == 'rightSide') {
-                if (moveAttackAnimationStarted === false) {
-                    window.clearInterval(staticIntervalId);
-                    window.clearInterval(moveIntervalId);
-                    moveIntervalId = moveMethod.actionAttackRight();
-                    moveAttackAnimationStarted = true;
-                }
-            } else if (lastPosition == 'leftSide') {
-                if (moveAttackAnimationStarted === false) {
-                    window.clearInterval(staticIntervalId);
-                    window.clearInterval(moveIntervalId);
-                    moveIntervalId = moveMethod.actionAttackLeft();
-                    moveAttackAnimationStarted = true;
-                }
-            }
+            // attack move by space key            
+            moveMethod.case32();
+
             break;
         };
     };
+
+    // Tactile touch command:
+    $leftTactileTouch.click(moveMethod.case37);
+    $rightTactileTouch.click(moveMethod.case39);
+    $attackTactileTouch.click(moveMethod.case32);
 });

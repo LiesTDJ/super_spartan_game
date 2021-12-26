@@ -182,7 +182,7 @@ Tactile Command
     position: fixed;
     margin-top: 465px;
     display: flex;
-    margin-left: 40%;
+    margin-left: 700px;
     z-index: 2;
     align-items: center;
 }
@@ -201,10 +201,16 @@ Tactile Command
     #commandeList {
         display: none;
     }
+    .tactileCommand {
+        margin-left: 400px;
+    }
 }
 
 @media all and (max-width: 768px) {
     #commandeList {
         display: none;
+    }
+    .tactileCommand {
+        margin-left: 250px;
     }
 }

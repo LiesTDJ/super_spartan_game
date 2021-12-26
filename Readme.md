@@ -49,8 +49,7 @@ I don't mind if anyone want to use my work:
 ***
 ## FAQs
 ***
-### A list of frequently asked questions ###
-***
+### A list of frequently asked questions
 **Will this game work?**
 ***
 Yes, it will work!

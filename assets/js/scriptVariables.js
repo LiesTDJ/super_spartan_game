@@ -15,7 +15,6 @@ const $content = $('.content');
 var lastPosition = 'rightSide'; // keep in a var the last direction/position of the character
 
 const windowSize = window.innerWidth;
-console.log("🚀 ~ file: script.js ~ line 294 ~ windowSize", windowSize);
 
 var InitialCharacterPosition = 250;
 var elementMove = InitialCharacterPosition;
@@ -42,3 +41,7 @@ const $trophy3 = $('.trophy3');
 const $heart1 = $('.heart1');
 const $heart2 = $('.heart2');
 const $heart3 = $('.heart3');
+
+const $leftTactileTouch = $('.leftTouch');
+const $attackTactileTouch = $('.attackTouch');
+const $rightTactileTouch = $('.rightTouch');
