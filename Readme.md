@@ -11,6 +11,7 @@ This is my first JavaScript game for a **IFOCOP** project.
   - [Technologies](#technologies)
   - [Collaboration](#collaboration)
   - [FAQs](#faqs)
+    - [A list of frequently asked questions](#a-list-of-frequently-asked-questions)
 ***
 ## 1.2. General Info
 ***
@@ -20,9 +21,12 @@ I would like to make a platform game to revel my *curriculum vitae* with my new 
 ***
 ### 1.2.1. Project status
 ***
-Not finished yet,
+Not finished yet in my opinion, but playable.
 ***
-Trying to prevent my character to go out of the game field.
+I would like to correct and add few things as:
+  - the attack action in one touch
+  - a countdown/'speech bubbles' before the start of the game
+  - responsive to smartphone (tactile screen)
 ***
 ### 1.2.2. Screenshot
 ![Image text](assets/img/Spartan_Warrior/Sprite_Sheets/Visu01.png)
@@ -45,7 +49,7 @@ I don't mind if anyone want to use my work:
 ***
 ## FAQs
 ***
-###A list of frequently asked questions###
+### A list of frequently asked questions ###
 ***
 **Will this game work?**
 ***
