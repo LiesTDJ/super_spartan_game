@@ -34,7 +34,6 @@ Chose à faire:
 
 chose à faire si il y a le temps:
 
--faire interagir les dégâts du perso sur ennemie et inversement
--faire animer l'ennemie en marchant et mourant
--Faire progressivement apparaître les trophées.
--Mettre des coeurs pour la progression de la santé du personnage
+-faire animer l'ennemie en marchant et mourant FAIT!!!
+-Faire progressivement apparaître les trophées. FAIT!!!
+-Mettre des coeurs pour la progression de la santé du personnage FAIT!!!

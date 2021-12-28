@@ -204,6 +204,10 @@ Tactile Command
     .tactileCommand {
         margin-left: 400px;
     }
+    h1 {
+        margin-left: 40%;
+        width: max-content;
+    }
 }
 
 @media all and (max-width: 768px) {
