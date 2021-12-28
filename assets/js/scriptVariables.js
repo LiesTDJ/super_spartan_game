@@ -53,13 +53,5 @@ const $rightTactileTouch = $('.rightTouch');
 
 // Custom Alerts for Intro and Outro :
 const $alertIntro1 = $('#alertIntro1');
-const $messageIntro1 = $('.messageIntro1');
-const $yesIntro1 = $('.yesIntro1');
-
 const $alertIntro2 = $('#alertIntro2');
-const $messageIntro2 = $('.messageIntro2');
-const $yesIntro2 = $('.yesIntro2');
-
 const $alertIntro3 = $('#alertIntro3');
-const $messageIntro3 = $('.messageIntro3');
-const $yesIntro3 = $('.yesIntro3');

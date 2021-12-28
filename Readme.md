@@ -25,7 +25,6 @@ Not finished yet in my opinion, but playable.
 ***
 I would like to correct and add few things as:
   - the attack action in one touch
-  - a countdown/'speech bubbles' before the start of the game
   - responsive to smartphone (tactile screen)
 ***
 ### 1.2.2. Screenshot
