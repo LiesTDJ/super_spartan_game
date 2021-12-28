@@ -1,5 +1,6 @@
 /******************************************************************************
         Summary :
+                - Import custom alerts
                 - Font
                 - Background and font-style
                 - Home button
@@ -10,13 +11,16 @@
                 - Trophies
                 - Tactile Command
                 - Responsive
-*******************************************************************************/
+******************************************************************************/
 
+/******************************************************************************
+                            Import custom alerts
+******************************************************************************/
+@import './styleCustomAlerts.css';
 
 /******************************************************************************
                                     Font
 ******************************************************************************/
-
 /* alegreya-regular - latin */
 @font-face {
     font-family: 'Alegreya';
@@ -29,8 +33,7 @@
         url('../../vendors/fonts/alegreya-v19-latin-regular.woff') format('woff'), /* Modern Browsers */
         url('../../vendors/fonts/alegreya-v19-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
         url('../../vendors/fonts/alegreya-v19-latin-regular.svg#Alegreya') format('svg'); /* Legacy iOS */
-}
-/* alegreya-800 - latin */
+}/* alegreya-800 - latin */
 @font-face {
     font-family: 'Alegreya';
     font-style: normal;
@@ -47,7 +50,6 @@
 /******************************************************************************
                             Background and font-style
 ******************************************************************************/
-
 body {
     background: linear-gradient(0.25turn,#fde170, #81bbdf);
     background-repeat: repeat;
@@ -68,6 +70,7 @@ h1 {
     left: 1%;
     position: fixed;
     top: 1%;
+    z-index: 3;
 }
 
 /******************************************************************************
@@ -146,7 +149,7 @@ main {
                                 The enemy
 ******************************************************************************/
 .enemyContainer {  
-    left: 650px;  
+    left: 850px;  
     overflow: hidden;
     position: absolute;
     top: 250px;
@@ -189,7 +192,6 @@ Tactile Command
 .commandTouch {
     margin : 10%;
 }
-
 
 /******************************************************************************
                                 Responsive

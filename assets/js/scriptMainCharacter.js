@@ -217,7 +217,12 @@ const moveMethod = {
 
 $(function() {
 
-    //Setting of the initial position of the character
+    //Intro and command button in custom alerts:
+    alertMethod.functionAlertIntro1();
+    // alertMethod.functionAlertIntro3();
+    // alertMethod.functionAlertIntro2();
+
+    //Setting of the initial position of the character:
     $container.css('left', InitialCharacterPosition);
 
     window.onkeyup = function(event){

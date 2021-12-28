@@ -1,6 +1,6 @@
 'use strict'
 
-// audio of the game
+// audio of the game :
 const audioRunCharacter = new Audio('../audio/footsteps.mp3');
 const audioDeathCharacter = new Audio('../audio/characterDeath.mp3');
 const audioEnemyHurt = new Audio('../audio/enemyHurt.mp3');
@@ -16,6 +16,7 @@ var lastPosition = 'rightSide'; // keep in a var the last direction/position of 
 
 const windowSize = window.innerWidth;
 
+// Character settings :
 var InitialCharacterPosition = 250;
 var elementMove = InitialCharacterPosition;
 
@@ -24,24 +25,41 @@ var moveAnimationStarted = false;
 var moveAttackAnimationStarted = false;
 var staticIntervalId = 0;
 
-
+// Enemy settings :
 const $enemyContainer = $('.enemyContainer');
 const $enemyContent = $('enemyContent');
 
-var InitialEnemyPosition = 700;
+var InitialEnemyPosition = 850;
 var moveEnemyIntervalId = 0;
 
+//Life counters :
 var lifeCountCharacter = 3;
 var lifeCountEnemy = 9;
 
+// Trophies settings :
 const $trophy1 = $('.trophy1');
 const $trophy2 = $('.trophy2');
 const $trophy3 = $('.trophy3');
 
+// Life left character settings :
 const $heart1 = $('.heart1');
 const $heart2 = $('.heart2');
 const $heart3 = $('.heart3');
 
+// Tactile command settings :
 const $leftTactileTouch = $('.leftTouch');
 const $attackTactileTouch = $('.attackTouch');
 const $rightTactileTouch = $('.rightTouch');
+
+// Custom Alerts for Intro and Outro :
+const $alertIntro1 = $('#alertIntro1');
+const $messageIntro1 = $('.messageIntro1');
+const $yesIntro1 = $('.yesIntro1');
+
+const $alertIntro2 = $('#alertIntro2');
+const $messageIntro2 = $('.messageIntro2');
+const $yesIntro2 = $('.yesIntro2');
+
+const $alertIntro3 = $('#alertIntro3');
+const $messageIntro3 = $('.messageIntro3');
+const $yesIntro3 = $('.yesIntro3');

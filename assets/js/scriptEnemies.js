@@ -107,11 +107,10 @@ const moveEnemyMethod = {
     }
 };
 
-$(function() {
+const enemyEntrance = function () {
     $enemyContainer.css('left', InitialEnemyPosition);
-
-    moveEnemyIntervalId = moveEnemyMethod.moveLeft();
-
-    setInterval(moveEnemyMethod.attackEnemyAction, 100);
     
-});
+    moveEnemyIntervalId = moveEnemyMethod.moveLeft();
+    
+    setInterval(moveEnemyMethod.attackEnemyAction, 100);
+};
