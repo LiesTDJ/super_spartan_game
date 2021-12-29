@@ -5,6 +5,8 @@ Problème à résoudre:
 - Mettre des animations dans la page d'accueil et des scores.
 - changer le sprite de l'ennemi en Mr JS et le faire animer lors de la marche et du coup reçu/porté.
 - latence lorsque le perso arrive vers les bords pour changer de sens de marche.
+- bugs lorsque le perso est mort et que les commandes sont tjrs actives.
+
 - Mettre du responsive et/ou un message pr les petits écrans FAIT !!!
 - Faire un msg d'intro au début du jeu FAIT !!!
 

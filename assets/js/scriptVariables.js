@@ -55,3 +55,7 @@ const $rightTactileTouch = $('.rightTouch');
 const $alertIntro1 = $('#alertIntro1');
 const $alertIntro2 = $('#alertIntro2');
 const $alertIntro3 = $('#alertIntro3');
+
+const $alertWin1 = $('.alertWin1')
+const $alertWin2 = $('.alertWin2')
+const $alertWin3 = $('.alertWin3')

@@ -31,5 +31,21 @@ const alertMethod = {
         });
         $alertIntro3.click(myYes);
         confirmBox.show();
+    },
+
+    functionAlertWin: function(msg, myYes) {
+        if (lifeCountCharacter == 3) {
+            var confirmBox = $alertWin3;
+        } else if (lifeCountCharacter == 2) {
+            var confirmBox = $alertWin2;
+        } else if (lifeCountCharacter == 1) {
+            var confirmBox = $alertWin1;
+        }
+        $alertWin.unbind().click(function() {
+            confirmBox.hide();
+            
+        });
+        $alertWin.click(myYes);
+        confirmBox.show();
     }
 }

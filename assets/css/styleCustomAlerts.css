@@ -1,4 +1,4 @@
-#alertIntro1, #alertIntro2, #alertIntro3 {
+#alertIntro1, #alertIntro2, #alertIntro3, .alertWin1, .alertWin2, .alertWin3 {
     align-items: center;
     background: linear-gradient(0.25turn, #81bbdf, #fde170);
     border: 0px solid #aaa;
