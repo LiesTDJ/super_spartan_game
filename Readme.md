@@ -28,7 +28,7 @@ I would like to correct and add few things as:
   - responsive to smartphone (tactile screen)
 ***
 ### 1.2.2. Screenshot
-![Image text](assets/img/Spartan_Warrior/Sprite_Sheets/Visu01.png)
+![Image text](assets/img/VisuWhireSuperSpratanGame/visu2.png)
 ***
 ## Technologies
 ***
