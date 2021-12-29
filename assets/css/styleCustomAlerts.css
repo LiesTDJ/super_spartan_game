@@ -6,10 +6,24 @@
     box-sizing: border-box;
     display: none;
     height: fit-content;
-    left: 45%;
+    left: 48%;
     padding: 25px;
     position: fixed;
-    top: 23%; 
+    top: 35%; 
     width: fit-content;
     z-index: 5;
+}
+
+#alertIntro1:hover, #alertIntro2:hover, #alertIntro3:hover {
+    left: 40%;
+    top: 15%;
+}
+#alertIntro1:hover {
+    content: url('../img/CustomAlerts/CustomAlertIntro1.png');
+}
+#alertIntro2:hover {
+    content: url('../img/CustomAlerts/CustomAlertIntro2.png');
+}
+#alertIntro3:hover {
+    content: url('../img/CustomAlerts/CustomAlertIntro3.png');
 }
