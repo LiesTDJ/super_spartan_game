@@ -223,41 +223,44 @@ $(function() {
     //Setting of the initial position of the character:
     $container.css('left', InitialCharacterPosition);
 
-    window.onkeyup = function(event){
-        // Static movement
-        window.clearInterval(staticIntervalId);
-        window.clearInterval(moveIntervalId);
-        moveAnimationStarted = false;
-        moveAttackAnimationStarted = false;
-        staticIntervalId = moveMethod.static();
+    if (lifeCountCharacter > 0) {
+        window.onkeyup = function(event){
+            // Static movement
+            window.clearInterval(staticIntervalId);
+            window.clearInterval(moveIntervalId);
+            moveAnimationStarted = false;
+            moveAttackAnimationStarted = false;
+            staticIntervalId = moveMethod.static();
+        }
     }
     
     window.onkeydown = function(event){
 
         var code = event.keyCode;
+        if (lifeCountCharacter > 0) {
+            switch(code){
+                case 39:
+                // Move to the right by right arrow key
+                moveMethod.case39();
 
-        switch(code){
-            case 39:
-            // Move to the right by right arrow key
-            moveMethod.case39();
-
-            break;
-            
-            case 37:
-            // move to the left by left arrow key
-            moveMethod.case37();
-            
-            break;
+                break;
                 
-            case 32:
-            // attack move by space key            
-            moveMethod.case32();
+                case 37:
+                // move to the left by left arrow key
+                moveMethod.case37();
+                
+                break;
+                    
+                case 32:
+                // attack move by space key            
+                moveMethod.case32();
 
-            break;
-        };
+                break;
+            };
+        }
     };
 
-    // Tactile touch command:
+    // Tactile touch command: (not working yet)
     $leftTactileTouch.mouseenter(moveMethod.case37);
     $leftTactileTouch.mouseleave(window.clearInterval(moveIntervalId));
 
