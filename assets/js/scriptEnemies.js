@@ -98,7 +98,7 @@ const moveEnemyMethod = {
                 setTimeout(function() {
                     $enemyContainer.removeClass('enemyContainer').addClass('enemyNoneContainer');
 
-                    alert('BRAVO, vous avez battu Mr WWW! Et il vous reste ' + lifeCountCharacter + ' / 3 points de vie!!!');
+                    alert('BRAVO, vous avez battu Mr JS! Et il vous reste ' + lifeCountCharacter + ' / 3 points de vie!!!');
                     location.href = 'score.html';
 
                 }, 7000);

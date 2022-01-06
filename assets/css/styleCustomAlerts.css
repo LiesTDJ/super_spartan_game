@@ -6,17 +6,17 @@
     box-sizing: border-box;
     display: none;
     height: fit-content;
-    left: 48%;
+    left: 37%;
     padding: 25px;
-    position: fixed;
-    top: 35%; 
+    position: relative;
+    top: 5%; 
     width: fit-content;
     z-index: 5;
 }
 
 #alertIntro1:hover, #alertIntro2:hover, #alertIntro3:hover {
-    left: 40%;
-    top: 15%;
+    left: 22%;
+    top: -30%;
 }
 #alertIntro1:hover {
     content: url('../img/CustomAlerts/CustomAlertIntro1.png');
